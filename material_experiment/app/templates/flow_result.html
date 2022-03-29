@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>{{name}}</h3>
+<br>
+			<dl>
+                <dt>&nbsp;&nbsp;&nbsp;&nbsp;Measured Velocity</dt>
+                <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{query_table.measured_velocity}}</dd>
+                <br>
+				<dt>
+					&nbsp;&nbsp;&nbsp;&nbsp;Measured Pressure
+				</dt>
+				<dd>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{query_table.measured_pressure}}
+				</dd>
+				<br>
+				<dt>
+					&nbsp;&nbsp;&nbsp;&nbsp;Calculated Coefficients
+				</dt>
+				<dd>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{query_table.calculated_coefficients}}
+				</dd>
+			</dl>
+    {% endblock %}

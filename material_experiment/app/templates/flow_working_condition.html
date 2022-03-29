@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>{{name}}</h3>
+<br>
+			<dl>
+                <dt>&nbsp;&nbsp;&nbsp;&nbsp;Text Description</dt>
+                <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{query_table.text_description}}</dd>
+                <br>
+				<dt>
+					&nbsp;&nbsp;&nbsp;&nbsp;Image Description
+				</dt>
+				<dd>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{query_table.image_description}}
+				</dd>
+			</dl>
+    {% endblock %}

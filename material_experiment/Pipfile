@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask-wtf = "*"
+flask-sqlalchemy = "==2.3.2"
+flask-migrate = "*"
+pymysql = "==1.0.2"
+sqlalchemy = "==1.3.23"
+flask-login = "*"
+flask-bootstrap = "*"
+flask-cors = "*"
+pymongo = "*"
+dnspython = "*"
+requests = "*"
+urllib3 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"

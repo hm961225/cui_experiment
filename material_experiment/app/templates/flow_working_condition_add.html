@@ -1,0 +1,20 @@
+﻿{% extends "base.html" %}
+{% block content %}
+
+			<div class="container" style="width:40% ; margin-top:3%;">
+				<center><h2> Flow Working Condition Add </h2></center>
+				<br>
+				<br>
+			<form action="" method="post" enctype="multipart/form-data" novalidate>
+				<div class="form-group">
+					 <label for="text_description">Text Description</label><input type="text" class="form-control" name="text_description"  />
+				</div>
+                <div class="form-group">
+					 <label for="image_description">Image description</label><input type="file" name="image_description" />
+				</div>
+
+				<center> <button type="submit" class="btn btn-success">Submit</button></center>
+			</form>
+			</div>
+
+{% endblock %}

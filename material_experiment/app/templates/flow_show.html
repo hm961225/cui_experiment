@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+
+			<h2> Flow Experiment </h2>
+			<br>
+			<br>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							Experiment Name
+						</th>
+						<th>
+                            Materials
+						</th>
+						<th>
+                            Working Conditons
+						</th>
+						<th>
+							Results
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+				{% for i in range(query_table | length) %}
+				{% if i % 2 == 0 %}
+					<tr>
+				{% else %}
+					<tr class="success">
+				{% endif %}
+						<td>
+							<a href="{{url_for('flow_detail', experiment_name=query_table[i].experiment_name)}}">{{query_table[i].experiment_name}}</a>
+						</td>
+						<td>
+                            {{query_table[i].materials}}
+						</td>
+						<td>
+							<a href="{{url_for('flow_working_condition', experiment_name=query_table[i].experiment_name)}}">Detail</a>
+						</td>
+						<td>
+							<a href="{{url_for('flow_result', experiment_name=query_table[i].experiment_name)}}">Detail</a>
+						</td>
+					</tr>
+				{% endfor %}
+
+				</tbody>
+			</table>
+
+
+{% endblock %}

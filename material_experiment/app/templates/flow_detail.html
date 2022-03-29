@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>{{name}}</h3>
+<br>
+			<dl>
+                <dt>&nbsp;&nbsp;&nbsp;&nbsp;Experiment Introduction</dt>
+                <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{introduction}}</dd>
+                <br>
+				<dt>
+					&nbsp;&nbsp;&nbsp;&nbsp;Materials
+				</dt>
+				<dd>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{material}}
+				</dd>
+                <br>
+				<dt>
+					&nbsp;&nbsp;&nbsp;&nbsp;Working Conditions
+				</dt>
+				<dd>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{url_for('index')}}">Detail</a>
+				</dd>
+                <br>
+				<dt>
+					&nbsp;&nbsp;&nbsp;&nbsp;Results
+				</dt>
+				<dd>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{url_for('index')}}">Detail</a>
+				</dd>
+			</dl>
+    {% endblock %}
