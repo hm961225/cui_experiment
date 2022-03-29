@@ -9,7 +9,7 @@ class Config(object):
     DEBUG = True
     SECRET_KEY = "djhqweiqda***123123dasweq"
     # 数据库
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:hm436464@localhost:3306/shell_test?charset=utf8"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:hm436464@localhost:3306/cui_experiments?charset=utf8"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     #SAVE_PATH = app.root_path + '/files'
