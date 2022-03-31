@@ -132,14 +132,17 @@ def cui_working_condition_show(experiment_name):
         one_piece["piece_geometric_information"] = cui_experiment.piece_geometric_information
         one_piece["piece_pic"] = filename_to_url(SAVE_POSITION,
                                                  cui_experiment.piece_pic)
+        one_piece["piece_dis_pic"] = filename_to_url(SAVE_POSITION, cui_experiment.piece_dis_pic)
         one_piece["ring_number"] = cui_experiment.ring_number
         one_piece["ring_geometric_information"] = cui_experiment.ring_geometric_information
         one_piece["ring_pic"] = filename_to_url(SAVE_POSITION,
                                                 cui_experiment.ring_pic)
+        one_piece["ring_dis_pic"] = filename_to_url(SAVE_POSITION, cui_experiment.piece_dis_pic)
         one_piece["pipe_number"] = cui_experiment.pipe_number
         one_piece["pipe_geometric_information"] = cui_experiment.pipe_geometric_information
         one_piece["pipe_pic"] = filename_to_url(SAVE_POSITION,
                                                 cui_experiment.pipe_pic)
+        one_piece["pipe_dis_pic"] = filename_to_url(SAVE_POSITION, cui_experiment.pipe_dis_pic)
         one_piece["sensors_number"] = cui_experiment.sensors_number
         one_piece["sensors_distribution_pic"] = filename_to_url(SAVE_POSITION,
                                                                 cui_experiment.sensors_distribution_pic)
