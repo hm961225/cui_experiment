@@ -173,12 +173,15 @@ def cui_working_condition_add(experiment_name):
         piece_number = request.form.get('piece_number')
         piece_geometric_information = request.form.get('piece_geometric_information')
         piece_pic = acquire_files('piece_pic')
+        piece_dis_pic = acquire_files('piece_dis_pic')
         ring_number = request.form.get('ring_number')
         ring_geometric_information = request.form.get('ring_geometric_information')
         ring_pic = acquire_files('ring_pic')
+        ring_dis_pic = acquire_files("ring_dis_pic")
         pipe_number = request.form.get('pipe_number')
         pipe_geometric_information = request.form.get('pipe_geometric_information')
         pipe_pic = acquire_files('pipe_pic')
+        pipe_dis_pic = acquire_files("pipe_dis_dic")
         sensors_number = request.form.get('sensors_number')
         sensors_distribution_pic = acquire_files('sensors_distribution_pic')
         working_temperature_text = request.form.get('working_temperature_text')
@@ -195,12 +198,15 @@ def cui_working_condition_add(experiment_name):
         cui_experiment.piece_number = piece_number
         cui_experiment.piece_geometric_information = piece_geometric_information
         cui_experiment.piece_pic = file_save_to_sql(SAVE_LOCAL_POSITION, piece_pic)
+        cui_experiment.piece_dis_pic = file_save_to_sql(SAVE_LOCAL_POSITION, piece_dis_pic)
         cui_experiment.ring_number = ring_number
         cui_experiment.ring_geometric_information = ring_geometric_information
         cui_experiment.ring_pic = file_save_to_sql(SAVE_LOCAL_POSITION, ring_pic)
+        cui_experiment.ring_dis_pic = file_save_to_sql(SAVE_LOCAL_POSITION, ring_dis_pic)
         cui_experiment.pipe_number = pipe_number
         cui_experiment.pipe_geometric_information = pipe_geometric_information
         cui_experiment.pipe_pic = file_save_to_sql(SAVE_LOCAL_POSITION, pipe_pic)
+        cui_experiment.pipe_dis_pic = file_save_to_sql(SAVE_LOCAL_POSITION, pipe_dis_pic)
         cui_experiment.sensors_number = sensors_number
         cui_experiment.sensors_distribution_pic = file_save_to_sql(SAVE_LOCAL_POSITION, sensors_distribution_pic)
         cui_experiment.sensors_location = file_save_to_sql(SAVE_LOCAL_POSITION, sensors_location)
@@ -226,13 +232,16 @@ def cui_working_condition_modify(experiment_name):
         one_piece["piece_number"] = cui_experiment.piece_number
         one_piece["piece_geometric_information"] = cui_experiment.piece_geometric_information
         one_piece["piece_pic"] = filename_to_url(SAVE_POSITION, cui_experiment.piece_pic)
+        one_piece["piece_dis_pic"] = filename_to_url(SAVE_POSITION, cui_experiment.piece_dis_pic)
         one_piece["ring_number"] = cui_experiment.ring_number
         one_piece["ring_geometric_information"] = cui_experiment.ring_geometric_information
         one_piece["ring_pic"] = filename_to_url(SAVE_POSITION, cui_experiment.ring_pic)
+        one_piece["ring_dis_pic"] = filename_to_url(SAVE_POSITION, cui_experiment.ring_dis_pic)
         one_piece["pipe_number"] = cui_experiment.pipe_number
         one_piece["pipe_geometric_information"] = cui_experiment.pipe_geometric_information
         one_piece["pipe_pic"] = filename_to_url(SAVE_POSITION,
                                                 cui_experiment.pipe_pic)
+        one_piece["pipe_dis_pic"] = filename_to_url(SAVE_POSITION, cui_experiment.pipe_dis_pic)
         one_piece["sensors_number"] = cui_experiment.sensors_number
         one_piece["sensors_distribution_pic"] = filename_to_url(SAVE_POSITION,
                                                                 cui_experiment.sensors_distribution_pic)
@@ -253,39 +262,51 @@ def cui_working_condition_modify(experiment_name):
         # 获取信息
         process_description = request.form.get('process_description')
         experiment_facility_pic = acquire_files('experiment_facility_pic')
-        if experiment_facility_pic != []:
+        if experiment_facility_pic != [] and experiment_facility_pic != None:
             cui_experiment.experiment_facility_pic = file_save_to_sql(SAVE_LOCAL_POSITION, experiment_facility_pic)
         pipe_structure = request.form.get('pipe_structure')
         insulation = request.form.get('insulation')
         piece_number = request.form.get('piece_number')
+        piece_pic = request.form.get("piece_pic")
+        if piece_pic != [] and piece_pic != None:
+            cui_experiment.piece_pic = file_save_to_sql(SAVE_LOCAL_POSITION, piece_pic)
+        piece_dis_pic = request.form.get("piece_dis_pic")
+        if piece_dis_pic != [] and piece_dis_pic != None:
+            cui_experiment.piece_dis_pic = file_save_to_sql(SAVE_LOCAL_POSITION, piece_dis_pic)
         ring_geometric_information = request.form.get('ring_geometric_information')
         ring_pic = acquire_files('ring_pic')
-        if ring_pic != []:
+        if ring_pic != [] and ring_pic != None:
             cui_experiment.ring_pic = file_save_to_sql(SAVE_LOCAL_POSITION, ring_pic)
+        ring_dis_pic = acquire_files("ring_dis_pic")
+        if ring_dis_pic != [] and ring_dis_pic != None:
+            cui_experiment.ring_dis_pic = file_save_to_sql(SAVE_LOCAL_POSITION, ring_dis_pic)
         pipe_number = request.form.get('pipe_number')
         pipe_geometric_information = request.form.get('pipe_geometric_information')
         pipe_pic = acquire_files('pipe_pic')
-        if pipe_pic != []:
+        if pipe_pic != [] and pipe_pic != None:
             cui_experiment.pipe_pic = file_save_to_sql(SAVE_LOCAL_POSITION, pipe_pic)
+        pipe_dis_pic = acquire_files("pipe_dis_pic")
+        if pipe_dis_pic != [] and pipe_dis_pic != None:
+            cui_experiment.pipe_dis_pic = file_save_to_sql(SAVE_LOCAL_POSITION, pipe_dis_pic)
         sensors_number = request.form.get('sensors_number')
         sensors_distribution_pic = acquire_files('sensors_distribution_pic')
-        if sensors_distribution_pic != []:
+        if sensors_distribution_pic != [] and sensors_distribution_pic != None:
             cui_experiment.sensors_distribution_pic = file_save_to_sql(SAVE_LOCAL_POSITION, sensors_distribution_pic)
         working_temperature_text = request.form.get('working_temperature_text')
         working_temperature_file = acquire_files('working_temperature_file')
-        if working_temperature_file != []:
+        if working_temperature_file != [] and working_temperature_file != None:
             cui_experiment.working_temperature_file = file_save_to_sql(SAVE_LOCAL_POSITION, working_temperature_file)
         sensors_locations = acquire_files('sensors_locations_file')
-        if sensors_locations != []:
+        if sensors_locations != [] and sensors_locations != None:
             cui_experiment.sensors_location = file_save_to_sql(SAVE_LOCAL_POSITION, sensors_locations)
         ambient_temperature_file = acquire_files('ambient_temperature_file')
-        if ambient_temperature_file != []:
+        if ambient_temperature_file != [] and ambient_temperature_file != None:
             cui_experiment.ambient_temperature_file = file_save_to_sql(SAVE_LOCAL_POSITION, ambient_temperature_file)
         ambient_relative_humidity_file = acquire_files('ambient_relative_humidity_file')
-        if ambient_relative_humidity_file != []:
+        if ambient_relative_humidity_file != [] and ambient_relative_humidity_file != None:
             cui_experiment.environment_relative_humidity_file = file_save_to_sql(SAVE_LOCAL_POSITION, ambient_relative_humidity_file)
         ambient_temperature_and_humidity_file = acquire_files('ambient_temperature_and_humidity_file')
-        if ambient_temperature_and_humidity_file != []:
+        if ambient_temperature_and_humidity_file != [] and ambient_temperature_and_humidity_file != None:
             cui_experiment.ambient_temperature_and_humidity_file = file_save_to_sql(SAVE_LOCAL_POSITION, ambient_temperature_and_humidity_file)
         # 修改数据库信息（非文件）
         cui_experiment.process_description = process_description
