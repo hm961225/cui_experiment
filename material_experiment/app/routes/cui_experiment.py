@@ -352,7 +352,10 @@ def cui_result_show(experiment_name):
             "mass_ring_file": os.path.join(SAVE_LOCAL_POSITION, cui_experiment.mass_ring_file),
             "mass_pipe": filename_to_url(SAVE_POSITION, cui_experiment.mass_pipe_file),
             "mass_pipe_table": extract_mass_piece_data(SAVE_LOCAL_POSITION, cui_experiment.mass_pipe_file),
-            "mass_pipe_file": os.path.join(SAVE_LOCAL_POSITION, cui_experiment.mass_pipe_file)
+            "mass_pipe_file": os.path.join(SAVE_LOCAL_POSITION, cui_experiment.mass_pipe_file),
+            "ring_dis_pic": filename_to_url(SAVE_POSITION, cui_experiment.piece_dis_pic),
+            "piece_dis_pic": filename_to_url(SAVE_POSITION, cui_experiment.piece_dis_pic),
+            "pipe_dis_pic": filename_to_url(SAVE_POSITION, cui_experiment.pipe_dis_pic)
         }
         return jsonify(one_piece)
     return ""
