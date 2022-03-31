@@ -270,10 +270,10 @@ def cui_working_condition_modify(experiment_name):
         pipe_structure = request.form.get('pipe_structure')
         insulation = request.form.get('insulation')
         piece_number = request.form.get('piece_number')
-        piece_pic = request.form.get("piece_pic")
+        piece_pic = acquire_files("piece_pic")
         if piece_pic != [] and piece_pic != None:
             cui_experiment.piece_pic = file_save_to_sql(SAVE_LOCAL_POSITION, piece_pic)
-        piece_dis_pic = request.form.get("piece_dis_pic")
+        piece_dis_pic = acquire_files("piece_dis_pic")
         if piece_dis_pic != [] and piece_dis_pic != None:
             cui_experiment.piece_dis_pic = file_save_to_sql(SAVE_LOCAL_POSITION, piece_dis_pic)
         ring_geometric_information = request.form.get('ring_geometric_information')
